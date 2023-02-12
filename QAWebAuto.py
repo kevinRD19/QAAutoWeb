@@ -101,20 +101,20 @@ class AutoWebTests(unittest.TestCase):
 
         # Get the element of the title form
         enviar = WebDriverWait(self.browser, 30).until(EC.element_to_be_clickable(
-            (By.CSS_SELECTOR, "p.MuiTypography-root" +
+            (By.CSS_SELECTOR, "p.MuiTypography-root"\
              " jss197 MuiTypography-body1".replace(' ', '.'))
         ))
         # Move to the title form
         self.browser.execute_script("arguments[0].scrollIntoView();", enviar)
         # Get the submit button and click it
         enviar = WebDriverWait(self.browser, 30).until(EC.element_to_be_clickable(
-            (By.CSS_SELECTOR, "button.MuiButtonBase-root MuiButton-root " +
+            (By.CSS_SELECTOR, "button.MuiButtonBase-root MuiButton-root "\
              "MuiButton-contained jss200 MuiButton-containedPrimary".replace(' ', '.'))
         ))
         self.browser.execute_script("arguments[0].click();", enviar)
         # Get the error message
         error = self.browser.find_element(By.CSS_SELECTOR,
-                                          'p.MuiFormHelperText-root' +
+                                          'p.MuiFormHelperText-root'\
                                           ' jss206 Mui-error'.replace(' ', '.')
                                           )
         error = WebDriverWait(self.browser, 5).until(EC.presence_of_element_located(
